@@ -1,0 +1,1112 @@
+/* =========================================================
+   📖 AESTHETIC DIGITAL SCRAPBOOK & BINDER DIARY
+   Jihan (Baby Blue ☁️) & Serin (Soft Pink 🌸)
+   ========================================================= */
+
+:root {
+  /* Desk & Paper Colors */
+  --desk-bg: #f8f3ec;
+  --paper-cream: #fffdf9;
+  --blue-paper: #f0f7fe;
+  --pink-paper: #fff5f8;
+  --blue-grid: rgba(186, 230, 253, 0.55);
+  --pink-grid: rgba(251, 207, 232, 0.55);
+
+  /* Scrapbook Accents */
+  --blue-ink: #075985;
+  --pink-ink: #9d174d;
+  --pencil-dark: #374151;
+  --pencil-muted: #6b7280;
+  
+  --tape-blue: rgba(186, 230, 253, 0.85);
+  --tape-pink: rgba(251, 207, 232, 0.85);
+  --tape-yellow: rgba(254, 240, 138, 0.85);
+
+  /* Fonts */
+  --font-hand: 'Patrick Hand', cursive, sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-stamp: 'Fredoka', cursive, sans-serif;
+  --font-clean: 'Nunito', sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-hand);
+  background-color: var(--desk-bg);
+  background-image: 
+    radial-gradient(#e5ddd0 1px, transparent 1px),
+    linear-gradient(135deg, #fdf8f4 0%, #fbeff2 50%, #eff6fc 100%);
+  background-size: 24px 24px, 100% 100%;
+  color: var(--pencil-dark);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+/* Desk Ambient Ornaments */
+.desk-ornament {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.75;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
+}
+
+.flower-1 { top: 8%; left: 4%; font-size: 2.2rem; transform: rotate(-12deg); }
+.flower-2 { bottom: 12%; right: 4%; font-size: 2rem; transform: rotate(18deg); }
+.paperclip-scatter { top: 78%; left: 3%; font-size: 1.8rem; transform: rotate(45deg); opacity: 0.5; }
+
+.tape-scrap-1 {
+  position: fixed;
+  top: 45%;
+  left: 1%;
+  width: 50px;
+  height: 22px;
+  background: var(--tape-pink);
+  transform: rotate(-35deg);
+  border-left: 2px dashed rgba(255, 255, 255, 0.8);
+  border-right: 2px dashed rgba(255, 255, 255, 0.8);
+  opacity: 0.6;
+}
+
+.tape-scrap-2 {
+  position: fixed;
+  bottom: 25%;
+  right: 1.5%;
+  width: 48px;
+  height: 20px;
+  background: var(--tape-blue);
+  transform: rotate(25deg);
+  border-left: 2px dashed rgba(255, 255, 255, 0.8);
+  border-right: 2px dashed rgba(255, 255, 255, 0.8);
+  opacity: 0.6;
+}
+
+/* =========================================================
+   RETRO CASSETTE WALKMAN WIDGET
+   ========================================================= */
+.walkman-player {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 100;
+  cursor: pointer;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.walkman-player:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.walkman-case {
+  background: linear-gradient(135deg, #ffd1dc 0%, #bae6fd 100%);
+  border: 3px solid #ffffff;
+  border-radius: 16px;
+  padding: 10px 12px;
+  width: 175px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8), 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tape-window {
+  background: #2a2c35;
+  border-radius: 10px;
+  padding: 6px;
+  border: 2px solid #5a5d6e;
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.cassette-body {
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.cassette-label {
+  text-align: center;
+  background: #ffe4ec;
+  border-radius: 4px;
+  padding: 2px;
+  margin-bottom: 4px;
+}
+
+.label-top {
+  display: block;
+  font-family: var(--font-clean);
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #8b5cf6;
+  letter-spacing: 0.5px;
+}
+
+.mixtape-title {
+  display: block;
+  font-family: var(--font-stamp);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #db2777;
+}
+
+.cassette-spools {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #23252e;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.spool {
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spool.spinning {
+  animation: spinSpool 1.4s linear infinite;
+}
+
+@keyframes spinSpool {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spool-teeth {
+  width: 8px;
+  height: 8px;
+  background: #475569;
+  border-radius: 50%;
+}
+
+.tape-bridge {
+  width: 28px;
+  height: 6px;
+  background: #111827;
+  border-radius: 2px;
+}
+
+.walkman-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.power-led {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+  transition: all 0.3s;
+}
+
+.power-led.active {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.walkman-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #db2777;
+  font-size: 0.72rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.walkman-screen {
+  flex: 1;
+  background: #1e293b;
+  border-radius: 4px;
+  padding: 2px 6px;
+  text-align: center;
+}
+
+.walkman-status {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   SCRAPBOOK MAIN DESK WORKSPACE
+   ========================================================= */
+.scrapbook-desk {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 60px 16px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.desk-header {
+  text-align: center;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.header-tape {
+  width: 120px;
+  height: 26px;
+  background: var(--tape-yellow);
+  margin: 0 auto -10px;
+  transform: rotate(-2deg);
+  border-left: 2px dashed rgba(255, 255, 255, 0.8);
+  border-right: 2px dashed rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.scrapbook-title {
+  font-family: var(--font-stamp);
+  font-size: 2.4rem;
+  color: #1f2937;
+  text-shadow: 2px 2px 0 #ffffff;
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 8px;
+}
+
+.scrapbook-subtitle {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-top: 4px;
+}
+
+/* =========================================================
+   TWO-PAGE OPEN BINDER BOOK
+   ========================================================= */
+.binder-book {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  background: #fbf7ee;
+  border-radius: 20px;
+  box-shadow: 
+    0 24px 50px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  border: 12px solid #ede4d3;
+  overflow: visible;
+}
+
+/* Bookmark Ribbon */
+.bookmark-ribbon {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 80px;
+  background: linear-gradient(180deg, #f472b6, #db2777);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 25;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+/* Binder Pages Common */
+.binder-page {
+  padding: 30px 28px 24px;
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Page: Jihan's Baby Blue Grid */
+.page-left {
+  background-color: var(--blue-paper);
+  background-image: 
+    linear-gradient(to right, var(--blue-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--blue-grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 8px 0 0 8px;
+  box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Right Page: Serin's Soft Pink Grid */
+.page-right {
+  background-color: var(--pink-paper);
+  background-image: 
+    linear-gradient(to right, var(--pink-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--pink-grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Central Metallic Spiral Spine */
+.binder-spine {
+  width: 48px;
+  background: linear-gradient(90deg, #d8cebc 0%, #ece2cf 50%, #d8cebc 100%);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+}
+
+.spine-spiral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px 0;
+  height: 100%;
+}
+
+.ring-spiral {
+  width: 54px;
+  height: 18px;
+  background: linear-gradient(180deg, #9ca3af 0%, #f3f4f6 40%, #4b5563 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
+  margin-left: -3px;
+  position: relative;
+}
+
+.ring-spiral::before,
+.ring-spiral::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #2d3039;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.ring-spiral::before { left: -6px; }
+.ring-spiral::after { right: -6px; }
+
+/* Paperclip Accents */
+.paperclip {
+  position: absolute;
+  top: 14px;
+  width: 14px;
+  height: 38px;
+  border-radius: 8px;
+  border: 3px solid;
+  z-index: 12;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.clip-gold {
+  left: 20px;
+  border-color: #d97706;
+  background: transparent;
+  transform: rotate(-10deg);
+}
+
+.clip-pink {
+  right: 20px;
+  border-color: #ec4899;
+  background: transparent;
+  transform: rotate(10deg);
+}
+
+/* Page Meta Tags */
+.page-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-clean);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--pencil-muted);
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.meta-tag {
+  background: #ffffff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================================
+   POLAROID PHOTO SECTION (REALISTIC POLAROID LOOK)
+   ========================================================= */
+.polaroid-frame {
+  background: #ffffff;
+  padding: 12px 12px 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  position: relative;
+  width: 200px;
+  margin: 0 auto 20px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.polaroid-jihan {
+  transform: rotate(-3deg);
+}
+
+.polaroid-serin {
+  transform: rotate(3deg);
+}
+
+.polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+  z-index: 15;
+}
+
+.tape-corner {
+  position: absolute;
+  top: -10px;
+  width: 70px;
+  height: 22px;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.washi-blue {
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  background: var(--tape-blue);
+  border-left: 2px dashed rgba(255, 255, 255, 0.8);
+  border-right: 2px dashed rgba(255, 255, 255, 0.8);
+}
+
+.washi-pink {
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  background: var(--tape-pink);
+  border-left: 2px dashed rgba(255, 255, 255, 0.8);
+  border-right: 2px dashed rgba(255, 255, 255, 0.8);
+}
+
+.polaroid-inner {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  background: #f1f5f9;
+  border-radius: 2px;
+}
+
+.polaroid-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Camera Upload Badge on Polaroid */
+.polaroid-cam-btn {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-cam-blue {
+  color: #0284c7;
+  border: 2px solid #bae6fd;
+}
+
+.btn-cam-pink {
+  color: #db2777;
+  border: 2px solid #fbcfe8;
+}
+
+.polaroid-cam-btn:hover {
+  transform: scale(1.15) rotate(15deg);
+  background: #111827;
+  color: #ffffff;
+}
+
+.polaroid-cam-btn input[type="file"] {
+  display: none;
+}
+
+.polaroid-label {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.handwritten-name {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1f2937;
+}
+
+.zodiac-stamp {
+  display: inline-block;
+  font-family: var(--font-clean);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: var(--pencil-muted);
+  margin-top: 4px;
+}
+
+/* =========================================================
+   SCRAPBOOK ELEMENTS: TORN MEMOS, STICKERS & STAMPS
+   ========================================================= */
+.scrap-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Torn Memos */
+.torn-memo {
+  position: relative;
+  padding: 14px 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.memo-blue {
+  background: #ffffff;
+  border-left: 5px solid #38bdf8;
+}
+
+.memo-pink {
+  background: #ffffff;
+  border-left: 5px solid #f472b6;
+}
+
+.pin-thumbtack {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  font-size: 1.2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.memo-title {
+  font-family: var(--font-clean);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--pencil-muted);
+  margin-bottom: 6px;
+}
+
+.memo-list {
+  list-style: none;
+  font-size: 1.05rem;
+}
+
+.memo-list li {
+  margin-bottom: 4px;
+}
+
+.doodle-eq {
+  display: inline-flex;
+  gap: 3px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.eq-dot {
+  width: 5px;
+  height: 14px;
+  background: #f472b6;
+  border-radius: 3px;
+  animation: danceEq 0.9s infinite alternate;
+}
+
+.eq-dot:nth-child(2) { animation-delay: 0.2s; height: 18px; }
+.eq-dot:nth-child(3) { animation-delay: 0.4s; height: 10px; }
+.eq-dot:nth-child(4) { animation-delay: 0.3s; height: 16px; }
+
+@keyframes danceEq {
+  0% { transform: scaleY(0.4); }
+  100% { transform: scaleY(1); }
+}
+
+/* Food Scrapbook Clip */
+.food-scrap {
+  position: relative;
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.scrap-tape {
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  width: 50px;
+  height: 16px;
+  background: var(--tape-yellow);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.scrap-heading {
+  display: block;
+  font-family: var(--font-clean);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--pencil-muted);
+  margin-bottom: 8px;
+}
+
+.food-stickers {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.food-badge {
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+}
+
+/* Sticky Note Quotes */
+.sticky-note {
+  position: relative;
+  padding: 16px 16px 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+}
+
+.note-yellow {
+  background: #fef9c3;
+  transform: rotate(-1.5deg);
+}
+
+.note-pinkish {
+  background: #ffe4e6;
+  transform: rotate(1.5deg);
+}
+
+.tape-strip {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.note-head {
+  display: block;
+  font-family: var(--font-clean);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #854d0e;
+  margin-bottom: 4px;
+}
+
+.note-pinkish .note-head {
+  color: #9f1239;
+}
+
+.handwritten-quote {
+  font-family: var(--font-script);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1f2937;
+}
+
+/* Rubber Stamps */
+.rubber-stamp {
+  display: inline-block;
+  align-self: center;
+  border: 2px dashed;
+  border-radius: 8px;
+  padding: 4px 14px;
+  font-family: var(--font-stamp);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  opacity: 0.85;
+}
+
+.stamp-blue {
+  color: #0284c7;
+  border-color: #0284c7;
+  transform: rotate(-4deg);
+}
+
+.stamp-pink {
+  color: #db2777;
+  border-color: #db2777;
+  transform: rotate(4deg);
+}
+
+/* Stamp Action Button (Cap Stempel Cinta) */
+.stamp-action-btn {
+  background: #ffffff;
+  border: 2px dashed;
+  border-radius: 50px;
+  padding: 10px 18px;
+  font-family: var(--font-stamp);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-top: 4px;
+}
+
+.btn-stamp-blue {
+  color: #0369a1;
+  border-color: #38bdf8;
+}
+
+.btn-stamp-pink {
+  color: #be185d;
+  border-color: #f472b6;
+}
+
+.stamp-action-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.btn-stamp-blue:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.btn-stamp-pink:hover {
+  background: #db2777;
+  color: #ffffff;
+}
+
+.stamp-action-btn:active {
+  transform: translateY(2px) scale(0.97);
+}
+
+.stamp-count {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* Social Media Paper Tags */
+.social-tags-row {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.paper-tag {
+  flex: 1;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: var(--font-clean);
+  font-size: 0.76rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag-blue { color: #0284c7; }
+.tag-pink { color: #db2777; }
+
+.paper-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tag-blue:hover { background: #e0f2fe; }
+.tag-pink:hover { background: #fce7f3; }
+
+/* Page Footer Number */
+.page-footer-num {
+  text-align: center;
+  font-family: var(--font-clean);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #9ca3af;
+  margin-top: 14px;
+}
+
+/* =========================================================
+   POLAROID MEMORIES STRIP BELOW BINDER
+   ========================================================= */
+.desk-polaroids {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 2px dashed #cbd5e1;
+}
+
+.polaroid-strip-title {
+  text-align: center;
+  font-family: var(--font-stamp);
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.desk-polaroid-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.desk-polaroid {
+  background: #ffffff;
+  padding: 10px 10px 14px;
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.desk-polaroid.item-1 { transform: rotate(-2.5deg); }
+.desk-polaroid.item-2 { transform: rotate(1deg); }
+.desk-polaroid.item-3 { transform: rotate(2.5deg); }
+
+.desk-polaroid:hover {
+  transform: translateY(-8px) scale(1.04) rotate(0deg) !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.mini-pin {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+}
+
+.dp-img-box {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+.dp-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.desk-polaroid:hover img {
+  transform: scale(1.08);
+}
+
+.dp-caption {
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Footer Desk */
+.scrap-footer {
+  text-align: center;
+  padding: 28px 0 10px;
+}
+
+.footer-pencil {
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.footer-doodles {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.3rem;
+}
+
+/* Scrapbook Stamp Toast Popup */
+.scrap-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #ffffff;
+  border: 2px dashed #db2777;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-family: var(--font-stamp);
+  font-size: 1rem;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scrap-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Rubber Stamp Flying Particles */
+.flying-stamp-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  font-size: 1.8rem;
+  animation: stampParticle 1.2s ease-out forwards;
+}
+
+@keyframes stampParticle {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(var(--rot));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx-end), calc(var(--ty) - 60px)) scale(0.8) rotate(calc(var(--rot) * 2));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================= */
+@media (max-width: 860px) {
+  .binder-book {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+    border-width: 8px;
+  }
+
+  .binder-spine {
+    width: 100%;
+    height: 36px;
+    order: 2;
+    flex-direction: row;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .spine-spiral {
+    flex-direction: row;
+    padding: 0 20px;
+    height: auto;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .ring-spiral {
+    width: 18px;
+    height: 44px;
+    margin-left: 0;
+    margin-top: -4px;
+  }
+
+  .page-left {
+    border-radius: 8px 8px 0 0;
+    order: 1;
+    min-height: auto;
+  }
+
+  .page-right {
+    border-radius: 0 0 8px 8px;
+    order: 3;
+    min-height: auto;
+  }
+
+  .desk-polaroid-gallery {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .walkman-player {
+    top: 10px;
+    right: 12px;
+  }
+
+  .walkman-case {
+    width: 150px;
+    padding: 8px 10px;
+  }
+
+  .scrapbook-title {
+    font-size: 1.85rem;
+  }
+}

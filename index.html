@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📖 Jihan & Serin ✨ Scrapbook Diary</title>
+  
+  <!-- Google Fonts: Caveat, Patrick Hand, Mali & Fredoka for authentic scrapbook handwriting -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;600;700&family=Itim&family=Patrick+Hand&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Scrapbook Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Floating Stickers & Dried Petals on Desk -->
+  <div class="desk-ornament flower-1">🌸</div>
+  <div class="desk-ornament flower-2">🌼</div>
+  <div class="desk-ornament tape-scrap-1"></div>
+  <div class="desk-ornament tape-scrap-2"></div>
+  <div class="desk-ornament paperclip-scatter">📎</div>
+
+  <!-- RETRO CASSETTE WALKMAN / MUSIC PLAYER WIDGET -->
+  <aside class="walkman-player" id="walkmanWidget" title="Pemutar Kaset Retro Bestie">
+    <div class="walkman-case">
+      <!-- Tape Window with Spinning Reels -->
+      <div class="tape-window">
+        <div class="cassette-body">
+          <div class="cassette-label">
+            <span class="label-top">SIDE A • STEREO</span>
+            <span class="mixtape-title">Bestie Lofi Mixtape 📼</span>
+          </div>
+          <div class="cassette-spools">
+            <div class="spool spool-left" id="spoolLeft">
+              <div class="spool-teeth"></div>
+            </div>
+            <div class="tape-bridge"></div>
+            <div class="spool spool-right" id="spoolRight">
+              <div class="spool-teeth"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Status -->
+      <div class="walkman-controls">
+        <div class="power-indicator" id="powerLed" title="Status Pemutar"></div>
+        <button class="walkman-btn play-btn" id="walkmanToggleBtn" aria-label="Putar Kaset">
+          <i class="fa-solid fa-play" id="walkmanIcon"></i>
+        </button>
+        <div class="walkman-screen">
+          <span class="walkman-status" id="walkmanStatusText">TAPE STOPPED</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN SCRAPBOOK WORKSPACE -->
+  <main class="scrapbook-desk">
+    
+    <!-- Top Desk Title Header -->
+    <header class="desk-header">
+      <div class="header-tape"></div>
+      <h1 class="scrapbook-title">
+        <span>📖 Our Little Scrapbook</span>
+      </h1>
+      <p class="scrapbook-subtitle">
+        Catatan harian persahabatan manis antara <strong>Jihan ☁️</strong> & <strong>Serin 🌸</strong>
+      </p>
+    </header>
+
+    <!-- THE TWO-PAGE OPEN BINDER BOOK -->
+    <div class="binder-book">
+      
+      <!-- Bookmark Ribbon Hanging at Top -->
+      <div class="bookmark-ribbon"></div>
+
+      <!-- ============================================
+           LEFT PAGE: JIHAN'S BABY BLUE SCRAPBOOK
+           ============================================ -->
+      <section class="binder-page page-left" id="jihanScrapPage">
+        
+        <!-- Corner Paperclip -->
+        <div class="paperclip clip-gold"></div>
+        
+        <!-- Page Number / Tag -->
+        <div class="page-meta">
+          <span class="meta-tag">MEMO NO. 07</span>
+          <span class="meta-date">07 • 11 • 2008</span>
+        </div>
+
+        <!-- Polaroid Photo: Jihan -->
+        <div class="polaroid-frame polaroid-jihan">
+          <!-- Washi tape holding photo -->
+          <div class="tape-corner washi-blue"></div>
+          
+          <div class="polaroid-inner">
+            <img id="jihanScrapImg" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Foto Jihan">
+            <!-- Camera Upload Pin Button -->
+            <label for="jihanScrapUpload" class="polaroid-cam-btn btn-cam-blue" title="Ganti foto Jihan">
+              <i class="fa-solid fa-camera"></i>
+              <input type="file" id="jihanScrapUpload" accept="image/*">
+            </label>
+          </div>
+          
+          <div class="polaroid-label">
+            <span class="handwritten-name">Jihan ☁️</span>
+            <span class="zodiac-stamp">♏ SCORPIO</span>
+          </div>
+        </div>
+
+        <!-- Scrapbook Elements Grid -->
+        <div class="scrap-elements">
+
+          <!-- Torn Memo: Profile Summary -->
+          <div class="torn-memo memo-blue">
+            <div class="pin-thumbtack blue-pin">📍</div>
+            <h3 class="memo-title">About This Girl:</h3>
+            <ul class="memo-list">
+              <li><strong>Panggilan:</strong> Jihan</li>
+              <li><strong>Ciri Khas:</strong> 🫧 Introvert kalem & chill</li>
+              <li><strong>Spesialisasi:</strong> Rebahan Seharian 😴</li>
+            </ul>
+          </div>
+
+          <!-- Food Sticker Scrap -->
+          <div class="food-scrap scrap-blue">
+            <div class="scrap-tape"></div>
+            <span class="scrap-heading">FAVORITE CRAVINGS:</span>
+            <div class="food-stickers">
+              <span class="food-badge">🌶️ Seblak Pedas</span>
+              <span class="food-badge">🧋 Tea Jus Segar</span>
+            </div>
+          </div>
+
+          <!-- Sticky Note: Jihan's Iconic Motto -->
+          <div class="sticky-note note-yellow">
+            <div class="tape-strip"></div>
+            <span class="note-head">Motto Hidup:</span>
+            <p class="handwritten-quote">
+              "Ilmu padi : makin berisi makin menunduk, makin lama pelajaran makin mengantuk 🌾😴"
+            </p>
+          </div>
+
+          <!-- Rubber Stamp Seal -->
+          <div class="rubber-stamp stamp-blue">
+            <span class="stamp-inner">PRO REBAHAN • OFFICIAL CERTIFIED</span>
+          </div>
+
+          <!-- Interactive Hug Stamp Button -->
+          <button class="stamp-action-btn btn-stamp-blue" id="btnStampJihan">
+            <i class="fa-solid fa-stamp"></i>
+            <span>Beri Cap Cinta Jihan</span>
+            <span class="stamp-count" id="jihanStampCount">480</span>
+          </button>
+
+          <!-- Social Media Paper Tags -->
+          <div class="social-tags-row">
+            <a href="https://instagram.com/leonelistji4n_" target="_blank" rel="noopener noreferrer" class="paper-tag tag-blue">
+              <i class="fa-brands fa-instagram"></i> @leonelistji4n_
+            </a>
+            <a href="https://tiktok.com/@onlyjeee07" target="_blank" rel="noopener noreferrer" class="paper-tag tag-blue">
+              <i class="fa-brands fa-tiktok"></i> @onlyjeee07
+            </a>
+          </div>
+
+        </div> <!-- End scrap-elements -->
+
+        <div class="page-footer-num">- 01 -</div>
+      </section>
+
+
+      <!-- ============================================
+           BINDER CENTER: METALLIC SPIRAL RINGS
+           ============================================ -->
+      <div class="binder-spine">
+        <div class="spine-spiral">
+          <span class="ring-spiral"></span>
+          <span class="ring-spiral"></span>
+          <span class="ring-spiral"></span>
+          <span class="ring-spiral"></span>
+          <span class="ring-spiral"></span>
+          <span class="ring-spiral"></span>
+          <span class="ring-spiral"></span>
+          <span class="ring-spiral"></span>
+        </div>
+      </div>
+
+
+      <!-- ============================================
+           RIGHT PAGE: SERIN'S SOFT PINK SCRAPBOOK
+           ============================================ -->
+      <section class="binder-page page-right" id="serinScrapPage">
+        
+        <!-- Corner Paperclip -->
+        <div class="paperclip clip-pink"></div>
+
+        <!-- Page Number / Tag -->
+        <div class="page-meta">
+          <span class="meta-tag">MEMO NO. 06</span>
+          <span class="meta-date">06 • 04 • 2009</span>
+        </div>
+
+        <!-- Polaroid Photo: Serin -->
+        <div class="polaroid-frame polaroid-serin">
+          <!-- Washi tape holding photo -->
+          <div class="tape-corner washi-pink"></div>
+          
+          <div class="polaroid-inner">
+            <img id="serinScrapImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Foto Serin">
+            <!-- Camera Upload Pin Button -->
+            <label for="serinScrapUpload" class="polaroid-cam-btn btn-cam-pink" title="Ganti foto Serin">
+              <i class="fa-solid fa-camera"></i>
+              <input type="file" id="serinScrapUpload" accept="image/*">
+            </label>
+          </div>
+          
+          <div class="polaroid-label">
+            <span class="handwritten-name">Sherina 🌸</span>
+            <span class="zodiac-stamp">♈ ARIES</span>
+          </div>
+        </div>
+
+        <!-- Scrapbook Elements Grid -->
+        <div class="scrap-elements">
+
+          <!-- Torn Memo: Profile Summary -->
+          <div class="torn-memo memo-pink">
+            <div class="pin-thumbtack pink-pin">📌</div>
+            <h3 class="memo-title">About This Girl:</h3>
+            <ul class="memo-list">
+              <li><strong>Panggilan:</strong> Serin / Sherina</li>
+              <li><strong>Ciri Khas:</strong> 👑 Ceria & calon miliader</li>
+              <li>
+                <strong>Hobi:</strong> Menyanyi Manis 🎤
+                <div class="doodle-eq">
+                  <span class="eq-dot"></span>
+                  <span class="eq-dot"></span>
+                  <span class="eq-dot"></span>
+                  <span class="eq-dot"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Food Sticker Scrap -->
+          <div class="food-scrap scrap-pink">
+            <div class="scrap-tape"></div>
+            <span class="scrap-heading">FAVORITE CRAVINGS:</span>
+            <div class="food-stickers">
+              <span class="food-badge">🍵 Matcha Manis</span>
+              <span class="food-badge">🍜 Mie Lezat</span>
+            </div>
+          </div>
+
+          <!-- Sticky Note: Serin's Cheerful Motto -->
+          <div class="sticky-note note-pinkish">
+            <div class="tape-strip"></div>
+            <span class="note-head">Motto Hidup:</span>
+            <p class="handwritten-quote">
+              "Cemungut! Selalu ceria, tebar senyuman, dan kejar mimpi jadi miliader! 💕✨"
+            </p>
+          </div>
+
+          <!-- Rubber Stamp Seal -->
+          <div class="rubber-stamp stamp-pink">
+            <span class="stamp-inner">FUTURE BILLIONAIRE • APPROVED 💸</span>
+          </div>
+
+          <!-- Interactive Hug Stamp Button -->
+          <button class="stamp-action-btn btn-stamp-pink" id="btnStampSerin">
+            <i class="fa-solid fa-stamp"></i>
+            <span>Beri Cap Cinta Serin</span>
+            <span class="stamp-count" id="serinStampCount">520</span>
+          </button>
+
+          <!-- Social Media Paper Tags -->
+          <div class="social-tags-row">
+            <a href="https://instagram.com/ceyyinaa" target="_blank" rel="noopener noreferrer" class="paper-tag tag-pink">
+              <i class="fa-brands fa-instagram"></i> @ceyyinaa
+            </a>
+            <a href="https://tiktok.com/@ceyyinaa" target="_blank" rel="noopener noreferrer" class="paper-tag tag-pink">
+              <i class="fa-brands fa-tiktok"></i> @ceyyinaa
+            </a>
+          </div>
+
+        </div> <!-- End scrap-elements -->
+
+        <div class="page-footer-num">- 02 -</div>
+      </section>
+
+    </div> <!-- End binder-book -->
+
+
+    <!-- SCRAPBOOK POLAROID MEMORIES CLIPPED BELOW -->
+    <section class="desk-polaroids">
+      <div class="polaroid-strip-title">
+        <span>📸 Bestie Snapshots</span>
+      </div>
+
+      <div class="desk-polaroid-gallery">
+        <div class="desk-polaroid item-1">
+          <div class="mini-pin">📌</div>
+          <div class="dp-img-box">
+            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80" alt="Seblak & Matcha">
+          </div>
+          <p class="dp-caption">Seblak & Matcha Date 🌶️🍵</p>
+        </div>
+
+        <div class="desk-polaroid item-2">
+          <div class="mini-pin">📎</div>
+          <div class="dp-img-box">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Bestie Laughter">
+          </div>
+          <p class="dp-caption">Jihan Rebahan, Serin Nyanyi 😴🎶</p>
+        </div>
+
+        <div class="desk-polaroid item-3">
+          <div class="mini-pin">🌸</div>
+          <div class="dp-img-box">
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80" alt="Besties Forever">
+          </div>
+          <p class="dp-caption">Besties Forever & Always ☁️🌸</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Desk Notes -->
+    <footer class="scrap-footer">
+      <p class="footer-pencil">✏️ Ditulis tangan dengan penuh cinta untuk Jihan & Serin 🌸☁️</p>
+      <div class="footer-doodles">
+        <span>💌</span>
+        <span>☁️</span>
+        <span>✨</span>
+        <span>💖</span>
+        <span>🌸</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Interactive Stamp / Toast Pop-up -->
+  <div class="scrap-toast" id="scrapToast">
+    <span class="toast-stamp-icon" id="toastStampIcon">💮</span>
+    <span class="toast-stamp-text" id="toastStampText">Cap stempel berhasil ditempel!</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
